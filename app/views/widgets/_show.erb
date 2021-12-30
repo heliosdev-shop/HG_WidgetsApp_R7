@@ -1,0 +1,18 @@
+<div class='scaffold-cell' style='flex-basis: 95%'><%= widget.name %></div>
+
+
+
+
+<div class=" scaffold-line-buttons " style="flex-basis: 5%;">
+  
+
+  
+    <%= form_with url: widget_path(widget), html: {style: "display: inline-block;"}, method: :delete do |f| %>
+      <%= f.submit "Delete".html_safe,  data: {controller: 'confirmable', 'confirm-message': "Are you sure you want to delete #{ widget.name } ", 'action': 'confirmation#confirm'}, class: "delete-widget-button btn btn-primary btn-sm" %>
+    <% end %>
+  
+
+  
+  <%= link_to "Edit <i class='fa fa-1x fa-list-alt'></i>".html_safe, edit_widget_path(widget), disable_with: "Loading...", class: "edit-widget-button btn btn-primary btn-sm" %>
+  
+</div>

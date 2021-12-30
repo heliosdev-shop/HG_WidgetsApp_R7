@@ -1,0 +1,29 @@
+<%= turbo_frame_tag "widgets-list"   do %>
+  <div class="scaffold-container scaffold-list">
+    <h4>WIDGETS</h4>
+
+    <%= render partial: "widgets/new_button", locals: {}%><br />
+
+    
+    <div class="row scaffold-heading-row">
+      <div class='scaffold-cell' style='flex-basis: 0%'>Name</div>
+      
+
+      
+
+      <div class=' scaffold-col-heading scaffold-col-heading-buttons' style="flex-basis: 150px>
+
+      </div>
+    </div>
+      <% if widgets.empty? %>
+    <div>
+        None
+    </div>
+      <% end %>
+      <% widgets.each do |widget| %>
+        <%= render partial: 'widgets/line', locals: {widget: widget } %>
+      <% end %>
+    <% if widgets.respond_to?(:total_pages) %><%= paginate(widgets) %> <% end %>
+  
+  </div>
+<% end %>

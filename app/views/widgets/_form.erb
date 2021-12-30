@@ -1,0 +1,10 @@
+<div class="row">
+  <div class='scaffold-cell' ><span class='<%= "alert-danger" if widget.errors.details.keys.include?(:name) %>'  style="display: inherit;"  >  <%= f.text_field :name, value: @widget.name, autocomplete: 'off', size: 40, class: 'form-control', type: '' %>
+   <label class='form-text' >Name</label>
+</span></div>
+
+  <div class="scaffold-cell">
+    <%= link_to "Cancel", widgets_path,  {class: "btn btn-secondary"} %>
+    <%= f.submit "Save", class: "btn btn-primary pull-right" %>
+  </div>
+</div>

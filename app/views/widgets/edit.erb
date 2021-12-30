@@ -1,0 +1,20 @@
+<%= link_to "<i class='fa fa-arrow-circle-left  2x'></i> Back to list".html_safe, widgets_path %>
+
+<%= turbo_frame_tag "widget__#{@widget.id}" do  %>
+
+  <div class="cell editable" style="position: relative;">
+
+    <% if @widget.errors.any? %>
+      <%= render(partial: "errors", locals: {resource: @widget }) %>
+    <% end %>
+
+    <h2>Editing <%= @widget.name %></h2>
+    <%= form_with model: @widget, url: widget_path(@widget) do |f| %>
+    <%=  render partial: "form",  locals: {:widget => @widget, f: f} %>
+    <% end %>
+
+  </div>
+
+<% end %>
+
+

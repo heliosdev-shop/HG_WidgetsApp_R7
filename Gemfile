@@ -39,4 +39,6 @@ group :test do
   gem "webdrivers"
 end
 
+
+gem 'hot-glue', path: '/Users/jason/Work/Hot_Glue/hot-glue-private'
 gem 'devise', branch: 'main', git: 'https://github.com/heartcombo/devise'

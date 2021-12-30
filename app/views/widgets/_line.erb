@@ -1,0 +1,11 @@
+
+<%= turbo_frame_tag "widget__#{ widget.id }" do  %>
+  <div class='row scaffold-row' data-id='<%= widget.id %>' data-edit='false'>
+    <%= render partial: 'widgets/show', locals: { widget: widget } %>
+
+  </div>
+<% end %>
+
+
+
+
